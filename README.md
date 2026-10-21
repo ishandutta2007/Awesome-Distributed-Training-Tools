@@ -33,6 +33,7 @@ Training state-of-the-art foundation models and deep neural networks requires sc
 - [🛠️ Open-Source GitHub Projects](#️-open-source-github-projects)
 - [🧩 Architectural Comparison: Parallelism Strategies](#-architectural-comparison-parallelism-strategies)
 - [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support](#-support)
 - [⚖️ Disclaimer](#️-disclaimer)
 - [📈 Star History](#-star-history)
 - [📄 License](#-license)
@@ -178,6 +179,28 @@ Contributions from the distributed training and MLOps community are warmly welco
    git push origin feat/add-training-tool
    ```
 5. **Open a Pull Request** with a brief summary explaining the tool's relevance and architectural strengths.
+
+---
+
+## 💖 Support
+
+Thank you for visiting and supporting the **Awesome Distributed Training Tools** project! Curating, verifying, and maintaining high-quality distributed AI and MLOps ecosystem guides takes continuous dedication.
+
+If you find this repository helpful for your projects, research, or infrastructure design, please consider showing your support:
+- ⭐ **Star this repository** to improve its visibility and help other ML engineers discover it.
+- 🍴 **Fork and contribute** new tools, benchmarks, case studies, or documentation improvements.
+- 📢 **Share with your network**, colleagues, and developer communities on Twitter/X, LinkedIn, Reddit, or Discord.
+- ☕ **Buy me a coffee / Sponsor**: If you would like to support ongoing research and community maintenance, you can sponsor through the **[GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007)**:
+
+<p align="center">
+  <a href="https://github.com/sponsors/ishandutta2007" target="_blank">
+    <img src="https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-ea4aaa?style=for-the-badge&logo=github-sponsors" alt="Sponsor on GitHub" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/sponsors/ishandutta2007" target="_blank">
+    <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
+  </a>
+</p>
 
 ---
 
