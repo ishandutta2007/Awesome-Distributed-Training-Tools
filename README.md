@@ -32,8 +32,8 @@ Training state-of-the-art foundation models and deep neural networks requires sc
 - [🏢 SaaS & Hosted Platforms](#-saas--hosted-platforms)
 - [🛠️ Open-Source GitHub Projects](#️-open-source-github-projects)
 - [🧩 Architectural Comparison: Parallelism Strategies](#-architectural-comparison-parallelism-strategies)
+- [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-faq)
 - [🤝 How to Contribute](#-how-to-contribute)
-- [💖 Support](#-support)
 - [⚖️ Disclaimer](#️-disclaimer)
 - [📈 Star History](#-star-history)
 - [📄 License](#-license)
@@ -45,7 +45,7 @@ Training state-of-the-art foundation models and deep neural networks requires sc
 The global distributed deep learning and AI compute infrastructure market was valued at approximately **$28.4 billion in 2024** and is projected to expand to **$115+ billion by 2030**, reflecting a blistering **CAGR of ~31%** fueled by hyperscale pretraining clusters, multi-modal reasoning models, and enterprise fine-tuning pipelines.
 
 The industry exhibits a dual dynamic:
-- **Hardware & Hyperscale Layer (Highly Concentrated / Winner-Take-Most):** Dominated almost exclusively by NVIDIA hardware/networking (InfiniBand, NVLink, DGX) and top-tier cloud providers (AWS, Azure, Google Cloud).
+- **Hardware & Hyperscale Layer (Highly Concentrated / Winner-Take-Most):** Dominated almost exclusively by NVIDIA hardware/networking (InfiniBand, NVLink, DGX) and top-tier cloud hyperscalers (AWS, Azure, Google Cloud).
 - **Orchestration, Tooling & Software Layer (Moderately Fragmented):** Richly distributed between modular open-source runtimes (Ray Train, PyTorch FSDP, DeepSpeed) and specialized commercial platforms (Weights & Biases, Domino Data Lab, Run:ai), allowing engineering teams to combine zero-boilerplate code launchers with dedicated telemetry and cluster virtualization fabrics.
 
 ---
@@ -58,6 +58,8 @@ A comparison of leading hosted enterprise platforms for AI workload scheduling, 
 | :--- | :--- | :--- | :--- | :--- |
 | **[NVIDIA Base Command](https://www.nvidia.com/en-us/data-center/base-command/)** | **~$3,300 Billion** ($3.3T Market Cap) | **$4,500 / GPU / year** (via NVIDIA AI Enterprise) or **$19,600 / month** (DGX Cloud 8x H100 instance) | **Free-to-use perpetual license** for Base Command Manager for up to 8 accelerators per node (renewable annually, unlimited cluster size) | Enterprise cluster orchestration, bare-metal hardware telemetry, and multi-node DGX job scheduling. |
 | **[CoreWeave](https://www.coreweave.com/)** | **~$19.0 Billion** (Valuation) | **$2.23 / GPU / hour** (NVIDIA H100 PCIe) / **$2.99 / GPU / hour** (H100 SXM5 80GB) | **14-day Enterprise pilot trial** with up to **$1,000 compute credits** upon sales approval | Specialized GPU cloud infrastructure with ultra-low latency InfiniBand interconnects for multi-node LLM training. |
+| **[Paperspace (DigitalOcean)](https://www.paperspace.com/)** | **~$3.50 Billion** (DigitalOcean Market Cap) | **$8 / month** (Gradient Pro tier) or **$0.48 / GPU / hour** (on-demand compute) | **Free forever tier**: Free standard CPU & select M4000 GPU instances, 5 GB persistent storage, up to 6 hours continuous session runtime | Accessible GPU cloud notebooks and gradient workflow automation for individual researchers and agile teams. |
+| **[Lambda Labs](https://lambdalabs.com/)** | **~$1.50 Billion** (Valuation) | **$0.50 / GPU / hour** (NVIDIA A10) / **$2.49 / GPU / hour** (H100 SXM5 80GB) | **Free account setup** with zero minimum commitment; **$50 promotional compute credit** available upon verified academic/enterprise trial request | Bare-metal cloud instances and reserved 1-Click clusters optimized for distributed AI fine-tuning. |
 | **[Weights & Biases](https://wandb.ai/)** | **~$1.25 Billion** (Valuation) | **$50 / user / month** (billed annually, Teams tier) | **Free forever plan**: 1 user, 100 GB artifact storage, 1 GB/month Weave LLM tracing, and unlimited public/personal projects | Industry-standard experiment tracking, distributed run metric telemetry, model registry, and hyperparameter sweeps. |
 | **[Domino Data Lab](https://www.domino.ai/)** | **~$1.20 Billion** (Valuation) | **$50,000 / year** (~$4,166 / month) base enterprise platform license | **14-day guided sandbox PoC trial** with hands-on GPU/CPU compute credits upon consultation | Regulated enterprise MLOps platform with multi-cloud distributed cluster governance, audit trails, and reproducibility. |
 | **[Anyscale](https://www.anyscale.com/)** | **~$1.00 Billion** (Valuation) | **$0.50 / cluster-hour** platform fee (Starter tier) + underlying AWS/GCP cloud compute | **30-day free trial** with **$50 compute credits** and $0 base platform fee on Developer tier | Managed Ray platform built by Ray's creators for scalable Python & PyTorch distributed training & tuning. |
@@ -101,6 +103,12 @@ Curated open-source distributed training frameworks, zero-boilerplate launchers,
 - **Core Strengths:** Tracks distributed hyperparameter search runs, logs multi-node convergence metrics, persists dataset/code artifacts, and registers production model checkpoints. Integrates with PyTorch, Ray, Horovod, and Spark.
 - **Best For:** Organizations needing a vendor-independent, self-hostable experiment tracker and model registry.
 
+### 🔄 [TRL (Transformer Reinforcement Learning)](https://github.com/huggingface/trl) [![Stars](https://img.shields.io/github/stars/huggingface/trl?style=social&color=white)](https://github.com/huggingface/trl/stargazers)
+- **License:** Apache-2.0
+- **Focus:** Distributed post-training, alignment, and RLHF for foundation models.
+- **Core Strengths:** Full-stack library for post-training LLMs across multi-GPU setups. Provides scalable distributed implementations for Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Reinforcement Learning from Human Feedback (PPO/RLHF) integrated with DeepSpeed and FSDP.
+- **Best For:** Machine learning teams scaling alignment, preference learning, and reasoning fine-tuning across GPU clusters.
+
 ### 🟢 [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) [![Stars](https://img.shields.io/github/stars/NVIDIA/Megatron-LM?style=social&color=white)](https://github.com/NVIDIA/Megatron-LM/stargazers)
 - **License:** Apache-2.0
 - **Focus:** NVIDIA's reference implementation for massive Transformer pretraining.
@@ -112,6 +120,12 @@ Curated open-source distributed training frameworks, zero-boilerplate launchers,
 - **Focus:** Ring-AllReduce distributed training framework for TensorFlow, Keras, and PyTorch.
 - **Core Strengths:** Pioneered ring-allreduce algorithms for deep learning via NCCL and MPI. Wraps standard framework optimizers with `DistributedOptimizer` to automate inter-GPU gradient averaging without modifying forward/backward passes.
 - **Best For:** Legacy and enterprise codebases spanning multiple frameworks requiring straightforward multi-node scaling.
+
+### 🦙 [Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl) [![Stars](https://img.shields.io/github/stars/OpenAccess-AI-Collective/axolotl?style=social&color=white)](https://github.com/OpenAccess-AI-Collective/axolotl/stargazers)
+- **License:** Apache-2.0
+- **Focus:** Streamlined declarative distributed fine-tuning and pretraining framework.
+- **Core Strengths:** Turnkey orchestration for multi-GPU training with PyTorch FSDP, DeepSpeed ZeRO 2/3, FlashAttention-2, and sample packing. Configure multi-node distributed runs using concise YAML definitions without writing low-level distributed plumbing.
+- **Best For:** Practitioners wanting reproducible, high-throughput LLM fine-tuning across multi-GPU nodes with minimal code overhead.
 
 ### 🤗 [Hugging Face Accelerate](https://github.com/huggingface/accelerate) [![Stars](https://img.shields.io/github/stars/huggingface/accelerate?style=social&color=white)](https://github.com/huggingface/accelerate/stargazers)
 - **License:** Apache-2.0
@@ -131,6 +145,12 @@ Curated open-source distributed training frameworks, zero-boilerplate launchers,
 - **Core Strengths:** Developed by the official PyTorch team to showcase modern composable distributed training APIs: FSDP2 (per-parameter sharding), Tensor Parallel (TP), Context Parallel (CP), Activation Checkpointing, and Float8 (FP8) training.
 - **Best For:** Engineers building next-generation LLMs natively on top of cutting-edge PyTorch 2.x features without legacy overhead.
 
+### 🎼 [Composer](https://github.com/mosaicml/composer) [![Stars](https://img.shields.io/github/stars/mosaicml/composer?style=social&color=white)](https://github.com/mosaicml/composer/stargazers)
+- **License:** Apache-2.0
+- **Focus:** High-efficiency neural network training library developed by MosaicML / Databricks.
+- **Core Strengths:** Built specifically for massive cluster scaling. Delivers plug-and-play speedup recipes (selective backprop, blurpool, progressive resizing), tight PyTorch FSDP integration, instant checkpoint resumption to cloud object storage (S3/GCS/Azure), and elastic streaming dataset loaders.
+- **Best For:** Teams demanding fast training throughput, instant checkpoint resumption across spot nodes, and integrated distributed telemetry.
+
 ### ⚖️ [FairScale](https://github.com/facebookresearch/fairscale) [![Stars](https://img.shields.io/github/stars/facebookresearch/fairscale?style=social&color=white)](https://github.com/facebookresearch/fairscale/stargazers)
 - **License:** BSD-3-Clause
 - **Focus:** PyTorch research extensions for high-performance distributed training.
@@ -143,6 +163,12 @@ Curated open-source distributed training frameworks, zero-boilerplate launchers,
 - **Core Strengths:** Provides declarative YAML-based job specifications, built-in state-of-the-art hyperparameter search using adaptive ASHA, automated spot instance preemption handling, and cluster resource scheduling.
 - **Best For:** Teams wanting built-in distributed hyperparameter search and cluster management bundled into a single self-contained platform.
 
+### ☸️ [Kubeflow Training Operator](https://github.com/kubeflow/training-operator) [![Stars](https://img.shields.io/github/stars/kubeflow/training-operator?style=social&color=white)](https://github.com/kubeflow/training-operator/stargazers)
+- **License:** Apache-2.0
+- **Focus:** Kubernetes-native custom resource controller for distributed deep learning jobs.
+- **Core Strengths:** Unified controller managing distributed jobs across frameworks—including PyTorchJob, TFJob, XGBoostJob, and MPIJob. Automates pod lifecycle, Gang scheduling, NCCL networking configuration, and GPU worker orchestration on Kubernetes clusters.
+- **Best For:** Platform engineers building internal multi-tenant AI training clouds atop Kubernetes infrastructure.
+
 ---
 
 ## 🧩 Architectural Comparison: Parallelism Strategies
@@ -152,11 +178,36 @@ When scaling deep neural networks across multiple GPUs and nodes, select the par
 | Strategy | Mechanism | Primary Bottleneck Solved | Recommended Tools |
 | :--- | :--- | :--- | :--- |
 | **Data Parallelism (DDP)** | Replicates model on each GPU; gradients averaged via AllReduce | Throughput / batch size scaling | Hugging Face Accelerate, PyTorch DDP, Ray Train |
-| **Fully Sharded Data Parallel (FSDP / ZeRO-3)** | Shards optimizer states, gradients, and model weights across ranks | GPU VRAM out-of-memory during pretraining | DeepSpeed (ZeRO-3), PyTorch FSDP2, TorchTitan |
+| **Fully Sharded Data Parallel (FSDP / ZeRO-3)** | Shards optimizer states, gradients, and model weights across ranks | GPU VRAM out-of-memory during pretraining | DeepSpeed (ZeRO-3), PyTorch FSDP2, TorchTitan, Composer |
 | **Tensor Parallelism (TP)** | Splits individual linear weight matrices across GPUs (intra-layer) | Individual model layers too large for single GPU memory | Megatron-LM, Colossal-AI, TorchTitan |
 | **Pipeline Parallelism (PP)** | Partitions consecutive model layers across distinct GPU stages | Ultra-deep networks exceeding single-host capacity | Megatron-LM, DeepSpeed, Colossal-AI |
 | **Sequence Parallelism (SP / CP)** | Shards the input sequence length across multiple devices | Ultra-long context windows (>32k-128k tokens) | Megatron-LM, Colossal-AI, TorchTitan |
 | **3D Parallelism (TP + PP + DP)** | Combines Tensor, Pipeline, and Data Parallelism across cluster topology | Multi-hundred-billion parameter foundation models | Megatron-LM, DeepSpeed, Colossal-AI |
+
+---
+
+## ❓ Frequently Asked Questions (FAQ)
+
+<details>
+<summary><strong>💡 What is the core difference between PyTorch DDP and FSDP (ZeRO-3)?</strong></summary>
+
+- **PyTorch DDP (Distributed Data Parallel):** Replicates the entire model, gradients, and optimizer states across every participating GPU. While communication overhead is minimal (only gradients are synchronized via all-reduce), maximum model size is bounded by the VRAM of a single GPU.
+- **PyTorch FSDP (Fully Sharded Data Parallel) / ZeRO-3:** Shards model parameters, gradients, and optimizer states across all available GPUs. Model weights are gathered on demand during the forward and backward passes and discarded immediately afterward, allowing training of models far larger than any single device's memory.
+</details>
+
+<details>
+<summary><strong>⚖️ When should I choose DeepSpeed vs. PyTorch Native FSDP2?</strong></summary>
+
+- **DeepSpeed:** Offers comprehensive tooling including ZeRO-Offload (offloading to host CPU RAM and NVMe SSDs), curated Mixture-of-Experts (MoE) modules, and 3D parallelism integrations. Ideal when GPU memory is severely constrained or when offloading to system RAM is essential.
+- **PyTorch Native FSDP2 (TorchTitan):** Tightly integrated into modern PyTorch 2.x (torch.compile, DTensor, float8), with lower CPU memory overhead and simpler debugging without third-party C++ build dependencies.
+</details>
+
+<details>
+<summary><strong>🌐 How do I select between self-hosted open source and enterprise SaaS for distributed training?</strong></summary>
+
+- **Self-Hosted Open Source (Ray Train, Accelerate, Kubeflow):** Provides maximal architectural control, zero vendor lock-in, and cost efficiency when you already operate reserved on-prem GPU hardware or managed Kubernetes clusters.
+- **Enterprise SaaS (NVIDIA Base Command, Weights & Biases, CoreWeave):** Delivers managed turnkey infrastructure, SLA-backed InfiniBand networking, automated multi-tenant cluster scheduling, audit trails, and zero platform maintenance overhead.
+</details>
 
 ---
 
@@ -172,35 +223,13 @@ Contributions from the distributed training and MLOps community are warmly welco
 3. **Add your entry** to `README.md`:
    - Follow the established tabular format for SaaS platforms or list format for Open-Source projects.
    - For SaaS tools: ensure exact starting pricing, company scale/valuation, and explicit free tier or trial limits are detailed.
-   - For Open-Source tools: include official star badge with `style=social&color=white` linked to the `/stargazers` page.
+   - For Open-Source tools: include official star badge with `style=social&color=white` linked to the `/stargazers` page, and keep sorted descending by stars.
 4. **Commit and push** your modifications:
    ```bash
    git commit -m "Add [Tool Name] to Distributed Training ecosystem"
    git push origin feat/add-training-tool
    ```
 5. **Open a Pull Request** with a brief summary explaining the tool's relevance and architectural strengths.
-
----
-
-## 💖 Support
-
-Thank you for visiting and supporting the **Awesome Distributed Training Tools** project! Curating, verifying, and maintaining high-quality distributed AI and MLOps ecosystem guides takes continuous dedication.
-
-If you find this repository helpful for your projects, research, or infrastructure design, please consider showing your support:
-- ⭐ **Star this repository** to improve its visibility and help other ML engineers discover it.
-- 🍴 **Fork and contribute** new tools, benchmarks, case studies, or documentation improvements.
-- 📢 **Share with your network**, colleagues, and developer communities on Twitter/X, LinkedIn, Reddit, or Discord.
-- ☕ **Buy me a coffee / Sponsor**: If you would like to support ongoing research and community maintenance, you can sponsor through the **[GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007)**:
-
-<p align="center">
-  <a href="https://github.com/sponsors/ishandutta2007" target="_blank">
-    <img src="https://img.shields.io/badge/Sponsor%20on%20GitHub-%E2%9D%A4-ea4aaa?style=for-the-badge&logo=github-sponsors" alt="Sponsor on GitHub" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/sponsors/ishandutta2007" target="_blank">
-    <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
-  </a>
-</p>
 
 ---
 
