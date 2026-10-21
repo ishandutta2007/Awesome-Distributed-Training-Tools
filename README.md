@@ -35,6 +35,7 @@ Training state-of-the-art foundation models and deep neural networks requires sc
 - [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-faq)
 - [🤝 How to Contribute](#-how-to-contribute)
 - [⚖️ Disclaimer](#️-disclaimer)
+- [💖 Support](#-support)
 - [📈 Star History](#-star-history)
 - [📄 License](#-license)
 
@@ -241,7 +242,20 @@ Contributions from the distributed training and MLOps community are warmly welco
 
 ---
 
-## 📈 Star History
+## 💖 Support
+
+A huge thank you to everyone exploring, starring, and contributing to this ecosystem! 🚀
+
+If you find this repository helpful for your distributed deep learning pipelines, GPU orchestration setups, or research experiments, please consider supporting the project:
+
+- ⭐ **Star this repository** to help others discover it across the GitHub community.
+- 🍴 **Fork and contribute** by submitting PRs for new frameworks, benchmarks, or case studies.
+- 📢 **Share it** with your engineering team, research lab, or MLOps peers.
+- ☕ **Buy a coffee / Sponsor**: Support continued maintenance and curated AI infrastructure content via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+##  Star History
 
 [![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Distributed-Training-Tools&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Distributed-Training-Tools&type=date&legend=top-left)
 
