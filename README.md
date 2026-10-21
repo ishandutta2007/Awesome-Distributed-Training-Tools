@@ -72,7 +72,7 @@ A comparison of leading hosted enterprise platforms for AI workload scheduling, 
 
 ## 🛠️ Open-Source GitHub Projects
 
-Curated open-source distributed training frameworks, zero-boilerplate launchers, and memory optimization toolkits. Sorted by **GitHub Stars_Count descending**.
+Curated open-source distributed training frameworks, zero-boilerplate launchers, and memory optimization toolkits. Sorted by **GitHub_Stars_Count descending**.
 
 ### ☀️ [Ray](https://github.com/ray-project/ray) [![Stars](https://img.shields.io/github/stars/ray-project/ray?style=social&color=white)](https://github.com/ray-project/ray/stargazers)
 - **License:** Apache-2.0
