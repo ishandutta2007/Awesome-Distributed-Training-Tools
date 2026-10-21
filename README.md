@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Distributed-Training-Tools/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Distributed-Training-Tools?style=flat-square&color=gold" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Distributed-Training-Tools/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Distributed-Training-Tools?style=flat-square&color=gold" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Distributed-Training-Tools/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Distributed-Training-Tools?style=flat-square&color=blue" alt="GitHub Forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Distributed-Training-Tools/pulls"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Distributed-Training-Tools/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License: MIT" /></a>
@@ -72,7 +72,7 @@ A comparison of leading hosted enterprise platforms for AI workload scheduling, 
 
 ## 🛠️ Open-Source GitHub Projects
 
-Curated open-source distributed training frameworks, zero-boilerplate launchers, and memory optimization toolkits. Sorted by **GitHub Star Count descending**.
+Curated open-source distributed training frameworks, zero-boilerplate launchers, and memory optimization toolkits. Sorted by **GitHub Stars_Count descending**.
 
 ### ☀️ [Ray](https://github.com/ray-project/ray) [![Stars](https://img.shields.io/github/stars/ray-project/ray?style=social&color=white)](https://github.com/ray-project/ray/stargazers)
 - **License:** Apache-2.0
@@ -224,7 +224,7 @@ Contributions from the distributed training and MLOps community are warmly welco
 3. **Add your entry** to `README.md`:
    - Follow the established tabular format for SaaS platforms or list format for Open-Source projects.
    - For SaaS tools: ensure exact starting pricing, company scale/valuation, and explicit free tier or trial limits are detailed.
-   - For Open-Source tools: include official star badge with `style=social&color=white` linked to the `/stargazers` page, and keep sorted descending by stars.
+   - For Open-Source tools: include official Stars_Badge with `style=social&color=white` linked to the `/stargazers` page, and keep sorted descending by stars.
 4. **Commit and push** your modifications:
    ```bash
    git commit -m "Add [Tool Name] to Distributed Training ecosystem"
