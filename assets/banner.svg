@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="auto" style="background:#070b14;border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.6);">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#0c1527"/>
+      <stop offset="100%" stop-color="#080f1e"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#818cf8"/>
+      <stop offset="70%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Keyframe Styles -->
+    <style>
+      @keyframes flowData {
+        0% { stroke-dashoffset: 120; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { transform: scale(1); opacity: 0.6; }
+        50% { transform: scale(1.15); opacity: 0.95; }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes ringRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .anim-flow {
+        stroke-dasharray: 8 16;
+        animation: flowData 3s linear infinite;
+      }
+      .anim-flow-reverse {
+        stroke-dasharray: 8 16;
+        animation: flowData 4s linear infinite reverse;
+      }
+      .anim-pulse {
+        transform-origin: center;
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .anim-float {
+        animation: floatSlow 5s ease-in-out infinite;
+      }
+      .node-core {
+        animation: pulseGlow 2.5s ease-in-out infinite;
+        transform-origin: center;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Fill -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Matrix Grid -->
+  <g opacity="0.12">
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.8"/>
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#gridPattern)"/>
+  </g>
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="180" cy="80" r="160" fill="url(#glowGrad1)" class="anim-pulse" style="animation-delay: 0s;"/>
+  <circle cx="1020" cy="300" r="180" fill="url(#glowGrad2)" class="anim-pulse" style="animation-delay: 2s;"/>
+
+  <!-- Multi-Node Distributed Cluster Graphic (Background / Sides) -->
+  <g opacity="0.45">
+    <!-- Interconnect Bus & Network Topology Lines -->
+    <path d="M 80 190 Q 220 70 380 190 T 680 190" fill="none" stroke="#38bdf8" stroke-width="1.8" class="anim-flow"/>
+    <path d="M 520 190 Q 720 310 920 190 T 1120 190" fill="none" stroke="#c084fc" stroke-width="1.8" class="anim-flow-reverse"/>
+    
+    <!-- Left GPU Nodes (Ring All-Reduce Topology) -->
+    <g transform="translate(100, 190)">
+      <circle cx="0" cy="0" r="32" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="6" fill="#38bdf8" class="node-core"/>
+      <text x="0" y="32" fill="#94a3b8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" text-anchor="middle">GPU:0</text>
+    </g>
+    <g transform="translate(230, 110)">
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#818cf8" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#818cf8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#818cf8" class="node-core"/>
+      <text x="0" y="28" fill="#94a3b8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" text-anchor="middle">GPU:1</text>
+    </g>
+
+    <!-- Right GPU Nodes -->
+    <g transform="translate(970, 110)">
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#c084fc" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#c084fc" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#c084fc" class="node-core"/>
+      <text x="0" y="28" fill="#94a3b8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" text-anchor="middle">GPU:N-1</text>
+    </g>
+    <g transform="translate(1100, 190)">
+      <circle cx="0" cy="0" r="32" fill="none" stroke="#f472b6" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#f472b6" stroke-width="2"/>
+      <circle cx="0" cy="0" r="6" fill="#f472b6" class="node-core"/>
+      <text x="0" y="32" fill="#94a3b8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" text-anchor="middle">GPU:N</text>
+    </g>
+  </g>
+
+  <!-- Foreground Backdrop Shield (Protects title readability) -->
+  <rect x="180" y="45" width="840" height="290" rx="20" fill="#090d18" fill-opacity="0.7" stroke="#334155" stroke-width="1" stroke-opacity="0.5"/>
+
+  <!-- Foreground Content Group -->
+  <g id="foreground-content" style="z-index: 100;">
+    <!-- Top Meta Category Tag -->
+    <g transform="translate(600, 85)">
+      <rect x="-140" y="-14" width="280" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.6"/>
+      <circle cx="-116" cy="0" r="4" fill="#38bdf8" class="anim-pulse"/>
+      <text x="6" y="4.5" fill="#38bdf8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">HIGH-PERFORMANCE AI INFRASTRUCTURE</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="152" fill="url(#accentGrad)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="44" font-weight="900" letter-spacing="-0.5" text-anchor="middle" filter="url(#softGlow)">Awesome Distributed Training Tools</text>
+
+    <!-- Subtitle -->
+    <text x="600" y="195" fill="#f1f5f9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="500" letter-spacing="0.2" text-anchor="middle">Multi-GPU Orchestration • Zero-Boilerplate Scaling • Experiment Tracking • ZeRO &amp; FSDP</text>
+
+    <text x="600" y="222" fill="#94a3b8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13.5" font-weight="400" text-anchor="middle">A curated directory of premier open-source frameworks and enterprise SaaS platforms</text>
+
+    <!-- Animated Tech Badges / Interactive Feature Pills -->
+    <g transform="translate(240, 260)" class="anim-float">
+      <!-- Pill 1: PyTorch FSDP -->
+      <g transform="translate(0, 0)">
+        <rect width="105" height="30" rx="8" fill="url(#badgeGrad)" stroke="#475569" stroke-width="1"/>
+        <text x="52" y="19" fill="#e2e8f0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">⚡ PyTorch FSDP</text>
+      </g>
+      <!-- Pill 2: DeepSpeed ZeRO -->
+      <g transform="translate(118, 0)">
+        <rect width="130" height="30" rx="8" fill="url(#badgeGrad)" stroke="#475569" stroke-width="1"/>
+        <text x="65" y="19" fill="#e2e8f0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">🚀 DeepSpeed ZeRO</text>
+      </g>
+      <!-- Pill 3: Ray Train -->
+      <g transform="translate(261, 0)">
+        <rect width="100" height="30" rx="8" fill="url(#badgeGrad)" stroke="#475569" stroke-width="1"/>
+        <text x="50" y="19" fill="#e2e8f0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">☀️ Ray Train</text>
+      </g>
+      <!-- Pill 4: Accelerate -->
+      <g transform="translate(374, 0)">
+        <rect width="115" height="30" rx="8" fill="url(#badgeGrad)" stroke="#475569" stroke-width="1"/>
+        <text x="57" y="19" fill="#e2e8f0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">🤗 HF Accelerate</text>
+      </g>
+      <!-- Pill 5: Megatron-LM -->
+      <g transform="translate(502, 0)">
+        <rect width="115" height="30" rx="8" fill="url(#badgeGrad)" stroke="#475569" stroke-width="1"/>
+        <text x="57" y="19" fill="#e2e8f0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">🟢 Megatron-LM</text>
+      </g>
+      <!-- Pill 6: Colossal-AI -->
+      <g transform="translate(630, 0)">
+        <rect width="105" height="30" rx="8" fill="url(#badgeGrad)" stroke="#475569" stroke-width="1"/>
+        <text x="52" y="19" fill="#e2e8f0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">🌌 Colossal-AI</text>
+      </g>
+    </g>
+
+    <!-- Bottom Edge Accent Indicator -->
+    <rect x="520" y="318" width="160" height="2" rx="1" fill="url(#accentGrad)"/>
+  </g>
+</svg>
